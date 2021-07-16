@@ -1,0 +1,31 @@
+player/kick1 KICKOFF1
+player/kick2 KICKOFF2
+player/kick3 KICKOFF3
+player/kick4 KICKOFF4
+
+player/stride1 STRIDE01
+player/stride2 STRIDE02
+player/stride3 STRIDE03
+player/stride4 STRIDE04
+
+$random player/kick {
+ player/kick1 
+ player/kick2 
+ player/kick3 
+ player/kick4 
+}
+
+$random player/stride {
+ player/stride1 
+ player/stride2 
+ player/stride3 
+ player/stride4 
+}
+
+$playersound blader male *grunt KICKOFF1
+$playersound blader female *grunt KICKOFF1
+$playersound blader other *grunt KICKOFF1
+
+$playersound blader male *land KICKOFF1
+$playersound blader female *land KICKOFF1
+$playersound blader other *land KICKOFF1
