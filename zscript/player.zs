@@ -94,7 +94,18 @@ class BladerPlayer : DoomPlayer
 			momentum = sJumpCap + cappedvel * 0.5;
 		}
 
-		if(player.onground) {Thrust(momentum/35.,skateAngle);} 
+		if(player.onground) 
+		{
+			Thrust(momentum/35.,skateAngle);
+
+			let norm = cursector.FloorPlane.Normal;
+			let slopeAdjust = vel dot norm;
+			if(slopeAdjust < 0)
+			{
+				let adjustedVel = vel + (norm * slopeAdjust);
+				let finalVel = adjustedVel.Unit() * vel.length();
+			}
+		} 
 
 		if (!(player.cheats & CF_PREDICTING) && (cmd.forwardmove != 0 || cmd.sidemove != 0))
 		{
